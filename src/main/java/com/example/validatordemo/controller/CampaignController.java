@@ -12,17 +12,24 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.MethodArgumentNotValidException;
-import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Arrays;
+import java.util.Collections;
 
 @RestController
 @RequestMapping("/campaigns")
 public class CampaignController {
+    @GetMapping("")
+    public ResponseEntity<?> getCampaigns() {
+        return ResponseEntity.ok(
+                Arrays.asList(
+                    Campaign.builder().id(1L).build(),
+                    Campaign.builder().id(2L).build()
+                )
+        );
+    }
+
     @PostMapping("")
     public ResponseEntity<?> createCampaign(@Validated(NewValidationGroup.class) @RequestBody Campaign campaign) {
         return ResponseEntity.ok().build();
