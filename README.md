@@ -1,1 +1,1 @@
-# spring-validation-example
+# Spring validation example
