@@ -3,10 +3,6 @@ package com.example.validatordemo.controller;
 import com.example.validatordemo.domain.Campaign;
 import com.example.validatordemo.domain.ExistingValidationGroup;
 import com.example.validatordemo.domain.NewValidationGroup;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 import org.springframework.context.support.DefaultMessageSourceResolvable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,7 +11,6 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
-import java.util.Collections;
 
 @RestController
 @RequestMapping("/campaigns")
